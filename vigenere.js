@@ -1,7 +1,7 @@
 function toCode() {
 
 thekey= window.document.form.ta1.value;
-if ( (thekey==' ') || (thekey==null) )  {    thekey="XXX"; }
+// if (thekey==null)  {    thekey="XXX"; }
 thekey=thekey.toUpperCase(); 
 karry= new Array(thekey.length);
 j=0;
@@ -11,11 +11,12 @@ for (i=0; i<thekey.length; i++) {
 
 
 thecode= window.document.form.ta2.value;
-if ( (thecode==' ') || (thecode==null) )  {    thecode="YYY"; } 
+// if (thecode==null)  {    thecode="YYY"; } 
 thecode=thecode.toUpperCase();
 carry= new Array(thecode.length);
 for (i=0; i<thecode.length; i++) {
-    carry[i]=thecode.charCodeAt(i); }
+    carry[i]=thecode.charCodeAt(i);
+    if (carry[i]==10)  {carry[i]=32} }
 
 
 for (i=0; i<thecode.length; i++) {
@@ -34,7 +35,7 @@ window.document.form.ta3.value=conv;
 function toMess() {
 
 thekey= window.document.form.ta1.value;
-if ( (thekey==' ') || (thekey==null) )  {    thekey="XXX"; }
+// if (thekey==null)  {    thekey="XXX"; }
 thekey=thekey.toUpperCase(); 
 karry= new Array(thekey.length);
 j=0;
@@ -44,7 +45,7 @@ for (i=0; i<thekey.length; i++) {
 
 
 thecode= window.document.form.ta3.value;
-if ( (thecode==' ') || (thecode==null) )  {    thecode="YYY"; } 
+// if (thecode==null)  {    thecode="YYY"; } 
 carry= new Array(thecode.length);
 for (i=0; i<thecode.length; i++) {
     carry[i]=thecode.charCodeAt(i); }
