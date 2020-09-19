@@ -1,63 +1,62 @@
 function toCode() {
 
-thekey= window.document.form.ta1.value;
-// if (thekey==null)  {    thekey="XXX"; }
-thekey=thekey.toUpperCase(); 
-karry= new Array(thekey.length);
-j=0;
-conv="";
-for (i=0; i<thekey.length; i++) {
-    karry[i]=thekey.charCodeAt(i); }
+    theKey = window.document.form.ta1.value;
+    theKey = theKey.toUpperCase(); 
+    keyArray = new Array(theKey.length);
+    j = 0;
+    conv = "";
+    
+    for (i = 0; i < theKey.length; i++) {
+        keyArray[i] = theKey.charCodeAt(i);
+    }
 
+    theMess = window.document.form.ta2.value;
+    theMess = theMess.toUpperCase();
+    codeArray = new Array(theMess.length);
+    
+    for (i = 0; i < theMess.length; i++) {
+        codeArray[i] = theMess.charCodeAt(i);
+        if (codeArray[i] == 10)  {codeArray[i] = 32}  // If a line feed is entered, change it to a space.
+    }
 
-thecode= window.document.form.ta2.value;
-// if (thecode==null)  {    thecode="YYY"; } 
-thecode=thecode.toUpperCase();
-carry= new Array(thecode.length);
-for (i=0; i<thecode.length; i++) {
-    carry[i]=thecode.charCodeAt(i);
-    if (carry[i]==10)  {carry[i]=32} }
-
-
-for (i=0; i<thecode.length; i++) {
-    if (j==thekey.length)  { j=0; }
-    carry[i]=carry[i]+karry[j];
-    if ( carry[i]>95 )  { carry[i]= carry[i]-64; }
-    conv=conv.concat(String.fromCharCode(carry[i]));
-    j++; }
-  
-
-window.document.form.ta3.value=conv;
+    for (i = 0; i < theMess.length; i++) {
+        if (j == theKey.length)  {j = 0}
+        codeArray[i] = codeArray[i] + keyArray[j];
+        if (codeArray[i] > 95)  {codeArray[i] = codeArray[i] - 64}
+        conv = conv.concat(String.fromCharCode(codeArray[i]));
+        j++;
+    }
+    
+    window.document.form.ta3.value = conv;
 }
-
-
 
 function toMess() {
 
-thekey= window.document.form.ta1.value;
-// if (thekey==null)  {    thekey="XXX"; }
-thekey=thekey.toUpperCase(); 
-karry= new Array(thekey.length);
-j=0;
-conv="";
-for (i=0; i<thekey.length; i++) {
-    karry[i]=thekey.charCodeAt(i); }
+    theKey = window.document.form.ta1.value;
+    theKey = theKey.toUpperCase(); 
+    keyArray = new Array(theKey.length);
+    j = 0;
+    conv = "";
 
+    for (i = 0; i < theKey.length; i++) {
+        keyArray[i] = theKey.charCodeAt(i);
+    }
 
-thecode= window.document.form.ta3.value;
-// if (thecode==null)  {    thecode="YYY"; } 
-carry= new Array(thecode.length);
-for (i=0; i<thecode.length; i++) {
-    carry[i]=thecode.charCodeAt(i); }
+    theCode = window.document.form.ta3.value;
+    messArray = new Array(theCode.length);
 
+    for (i = 0; i < theCode.length; i++) {
+        messArray[i] = theCode.charCodeAt(i);
+    }
 
-for (i=0; i<thecode.length; i++) {
-    if (j==thekey.length)  { j=0; }
-    carry[i]=carry[i]-karry[j];
-    if ( carry[i]<32 )  { carry[i]= carry[i]+64; }
-    conv=conv.concat(String.fromCharCode(carry[i]));
-    j++; }
+    for (i = 0; i < theCode.length; i++) {
+        if (j == theKey.length)  {j = 0}
+        messArray[i] = messArray[i] - keyArray[j];
+        if (messArray[i] < 32)  {messArray[i] = messArray[i] + 64}
+        conv = conv.concat(String.fromCharCode(messArray[i]));
+        j++;
+    }
 
-conv=conv.toLowerCase();
-window.document.form.ta2.value=conv;
+    conv = conv.toLowerCase();
+    window.document.form.ta2.value = conv;
 }
