@@ -13,10 +13,10 @@ To be precise, the original plaintext message (and the key) can only utilize ASC
 The user can also use characters 97 to 122 (lowercase 'a' through 'z'), but those characters get converted to uppercase before enciphering, and the lowercase information is lost.
 In case the user enters line feeds (which are ASCII character 10) in the original plaintext message (by pressing 'Enter'), I convert line feeds to spaces (ASCII character 32) before enciphering.  The deciphered message then will have spaces in place of line feeds.
 Note also that the four characters {|}~ cannot be used in the original plaintext or key as they are ASCII characters 123 through 126.
-Same for the ` character (ASCII character 96).
+Same for the grave accent character (ASCII character 96).
 Update:  I have converted these five characters as well:
-{ -> (
-| -> /
-} -> )
-~ -> -
-` -> '
+{ -> (,
+| -> /,
+} -> ),
+~ -> -,
+grave accent -> '.
