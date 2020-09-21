@@ -2,7 +2,6 @@ function toCode() {
 
     j = 0;
     conv = "";
-    
     theKey = window.document.form.ta1.value.toUpperCase();
     theMess = window.document.form.ta2.value.toUpperCase();
 
@@ -28,7 +27,6 @@ function toMess() {
 
     j = 0;
     conv = "";
-    
     theKey = window.document.form.ta1.value.toUpperCase();
     theCode = window.document.form.ta3.value;
     
