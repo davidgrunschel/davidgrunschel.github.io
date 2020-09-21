@@ -4,14 +4,10 @@
 <body>
 
 <center>
-<p><b> This webpage contains a JavaScript program (programmed by me) which 
-enables users to encipher and decipher secret messages using a secret key.  
-The particular method used makes this cipher very similar to the Vigenere 
-cipher which was first published in Paris in 1586 in Blaise de Vigenere's 
-<i>Traicté des chiffres</i>.  The cipher is most secure when the key is
-random and has a character length on the order of the character length of the 
-message.  
-</b></p><p></p></center>For example, try deciphering the following ciphertext using 'conqueror david' as the secret key:
+<p><b> This webpage contains a JavaScript program (programmed by me) which enables users to encipher and decipher secret messages using a secret key. 
+The particular method used makes this cipher very similar to the <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">Vigenère cipher</a>.
+The cipher is most secure when the key is random and has a character length on the order of the character length of the message.  
+</b></p><p></p></center>For example, try deciphering the following ciphertext using 'Conqueror David' as the secret key:
 <p></p><center>
 
 <script language="JavaScript" src="vigenere.js">
@@ -22,16 +18,18 @@ message.
 Key:
 <textarea rows="1" cols="50" name="ta1"></textarea><p>
 
-<input value="Encipher" name="encode" onclick="toCode()" type="button">
-<input value="Decipher" name="decode" onclick="toMess()" type="button"><br>
+<input value="Encipher" name="encode" onclick="toCipher()" type="button">
+<input value="Decipher" name="decode" onclick="toPlain()" type="button"><br>
 
 <textarea rows="15" cols="50" name="ta2" wrap="">Just type in the key in the 'Key' field (but don't press 'Enter') then click the 'Decipher' button.</textarea>
 
-<textarea rows="15" cols="50" name="ta3" wrap="">ZWS_5^ad92I!jQMQZW_\%SQa5X!iXQHcVZcL2ha5$EeW+W/c_YJdbf!RE6bSX/UVi%fW[3$U[[VLQZV5Z`WS0TZ6OIH[W_\%UP^,IE6LSQUcd^T`=29SV6LEQ6b1eJ`Tf2EU[)XKXa1iM[]Y@EOZ)QRbb1dK2cZ%$U_VI#h]f5KWT^@VBjQIU/c_]Fb_k@[JjQ$WWWd5Ha]X5WJeW2#P\U5YZT22IBiXR#U]c5YZXe@GPdOYVX]_5Ne/f(EU6`I*aS1VQ^/e/QF6TMQS.`[%S_W3$UhbMQV.ed%bdf@XI[)XZ^.diNUZe@XP]NXKT`1iT2aW!GI6]LH/PRcF`P2M$BdM$ZT.TVS9c2-EL[)MW=.RcI2X2&IFb)PLZS1iM[b2!PM6]LH/bZbJ@/[GQ!iXQH/YZcI2^X@EQ[)XUhW_\%f^20YU6][R/ae^H]b24SH[]LHa.RcI2X2!PXWbW#USVa%ecg0MED)FXc.ddRWc[-IT6]LH/ae^H]b2'S!jXKHcVVg%a]2-I!WWH#X.cZFUW24LF6KEQP\RC%2<d)GIW[H#USjcRS]</textarea>
+<textarea rows="15" cols="50" name="ta3" wrap="">zXT`u_beyr*akRN2[X`]eTRbu9ajYR)dW[dMribuDFfXk8od`ZKecga3FvcT9oVWjegX\sDV\\W-R[Wu[aXTp5[vPJ)\X`]eVQ_l*FvMT2Vde_Ua}rY4WvMF2vcqfKaUgr&V\iY,YbqjN\^Z &P[iR3ccqeLrd[eDV`WJCi^guLXU_ 7CkRJ6od`^Gc`l <KkRd8XXeuIb^Yu8KfXrC1]VuZ[Urr*CjYSCV^duZ[Yf (QePZ7Y^`uOfogh&VvaJJbTqWR_ofo2GvUN2Tna\eT`XsDVicN2Wnfeeceg 9J\iY;_nejOV[f 9Q^OY,UaqjUrbXa(Jv^M)oQSdGaQr-DCeNd;UnUWTydrm&M\iN8}n3dJr9rf*GciQ-[TqjN\cra1Nv^M)oc[cK!o<'2ajYR)oZ[dJr_Y &R\iY6iX`]eg_rp:Vv^\3obf_I^crt4I\^M)bnSdJr9ra1YXcXCVTWbefdhp.F%i'9dneeSXd\m*Uv^M)obf_I^crg4akYL)dWWheb^rm*aXXIC9nd[GVXrt-GvLF2Q]S$er|Ei(JX\IC6TkdST^</textarea>
 
 </p>
 </form>
 </center>
+
+Send me a secret message at <b>JOXSQ&UT_[YQJOYsQQW</b> (that's my email address enciphered with the secret key 'email').
 
 </body>
 </html>

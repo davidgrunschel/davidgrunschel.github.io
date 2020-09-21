@@ -1,43 +1,29 @@
-function toCode() {
+function toCipher() {
 
-    j = 0;
     conv = "";
-    theKey = window.document.form.ta1.value.toUpperCase();
-    theMess = window.document.form.ta2.value.toUpperCase();
+    theKey = window.document.form.ta1.value;
+    thePlain = window.document.form.ta2.value;
 
-    for (i = 0; i < theMess.length; i++) {
-        if (j == theKey.length)  {j = 0}
-        iMess = theMess.charCodeAt(i);
-        if (iMess == 10)  {iMess = 32}   // If a line feed is entered, change it to a space.
-        if (iMess == 96)  {iMess = 39}   // If a ` character is entered, change it to a '.
-        if (iMess == 123)  {iMess = 40}  // If a { character is entered, change it to a (.
-        if (iMess == 124)  {iMess = 47}  // If a | character is entered, change it to a /.
-        if (iMess == 125)  {iMess = 41}  // If a } character is entered, change it to a ).
-        if (iMess == 126)  {iMess = 45}  // If a ~ character is entered, change it to a -.
-        iCode = iMess + theKey.charCodeAt(j);
-        if (iCode > 95)  {iCode = iCode - 64}
-        conv = conv.concat(String.fromCharCode(iCode));
-        j++;
+    for (i = 0; i < thePlain.length; i++) {
+        iPlain = thePlain.charCodeAt(i);
+        if (iPlain == 10)  {iPlain = 32}   // If a line feed is entered, change it to a space.
+        iCipher = ((iPlain + theKey.charCodeAt(i % theKey.length) - 64) % 95) + 32;
+        conv = conv.concat(String.fromCharCode(iCipher));
     }
     
     window.document.form.ta3.value = conv;
 }
 
-function toMess() {
+function toPlain() {
 
-    j = 0;
     conv = "";
-    theKey = window.document.form.ta1.value.toUpperCase();
-    theCode = window.document.form.ta3.value;
+    theKey = window.document.form.ta1.value;
+    theCipher = window.document.form.ta3.value;
     
-    for (i = 0; i < theCode.length; i++) {
-        if (j == theKey.length)  {j = 0}
-        iMess = theCode.charCodeAt(i) - theKey.charCodeAt(j);
-        if (iMess < 32)  {iMess = iMess + 64}
-        conv = conv.concat(String.fromCharCode(iMess));
-        j++;
+    for (i = 0; i < theCipher.length; i++) {
+        iPlain = ((theCipher.charCodeAt(i) + 95 - theKey.charCodeAt(i % theKey.length)) % 95) + 32;
+        conv = conv.concat(String.fromCharCode(iPlain));
     }
 
-    conv = conv.toLowerCase();
     window.document.form.ta2.value = conv;
 }
