@@ -1,29 +1,18 @@
 function toCode() {
 
-    theKey = window.document.form.ta1.value;
-    theKey = theKey.toUpperCase(); 
-    keyArray = new Array(theKey.length);
     j = 0;
     conv = "";
     
-    for (i = 0; i < theKey.length; i++) {
-        keyArray[i] = theKey.charCodeAt(i);
-    }
-
-    theMess = window.document.form.ta2.value;
-    theMess = theMess.toUpperCase();
-    codeArray = new Array(theMess.length);
-    
-    for (i = 0; i < theMess.length; i++) {
-        codeArray[i] = theMess.charCodeAt(i);
-        if (codeArray[i] == 10)  {codeArray[i] = 32}  // If a line feed is entered, change it to a space.
-    }
+    theKey = window.document.form.ta1.value.toUpperCase();
+    theMess = window.document.form.ta2.value.toUpperCase();
 
     for (i = 0; i < theMess.length; i++) {
         if (j == theKey.length)  {j = 0}
-        codeArray[i] = codeArray[i] + keyArray[j];
-        if (codeArray[i] > 95)  {codeArray[i] = codeArray[i] - 64}
-        conv = conv.concat(String.fromCharCode(codeArray[i]));
+        iMess = theMess.charCodeAt(i);
+        if (iMess == 10)  {iMess = 32}  // If a line feed is entered, change it to a space.
+        iCode = iMess + theKey.charCodeAt(j);
+        if (iCode > 95)  {iCode = iCode - 64}
+        conv = conv.concat(String.fromCharCode(iCode));
         j++;
     }
     
@@ -32,28 +21,17 @@ function toCode() {
 
 function toMess() {
 
-    theKey = window.document.form.ta1.value;
-    theKey = theKey.toUpperCase(); 
-    keyArray = new Array(theKey.length);
     j = 0;
     conv = "";
-
-    for (i = 0; i < theKey.length; i++) {
-        keyArray[i] = theKey.charCodeAt(i);
-    }
-
+    
+    theKey = window.document.form.ta1.value.toUpperCase();
     theCode = window.document.form.ta3.value;
-    messArray = new Array(theCode.length);
-
-    for (i = 0; i < theCode.length; i++) {
-        messArray[i] = theCode.charCodeAt(i);
-    }
-
+    
     for (i = 0; i < theCode.length; i++) {
         if (j == theKey.length)  {j = 0}
-        messArray[i] = messArray[i] - keyArray[j];
-        if (messArray[i] < 32)  {messArray[i] = messArray[i] + 64}
-        conv = conv.concat(String.fromCharCode(messArray[i]));
+        iMess = theCode.charCodeAt(i) - theKey.charCodeAt(j);
+        if (iMess < 32)  {iMess = iMess + 64}
+        conv = conv.concat(String.fromCharCode(iMess));
         j++;
     }
 
