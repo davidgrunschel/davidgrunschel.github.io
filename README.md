@@ -8,4 +8,4 @@ All 95 printable characters in ASCII can be utilized, with character codes 32 th
 
 &nbsp;!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
 
-Above, &nbsp; means the space character.  In case the user enters line feeds (which are ASCII character 10) in the original plaintext message (by pressing 'Enter'), I convert line feeds to spaces (ASCII character 32) before enciphering.  The deciphered message then will have spaces in place of line feeds.
+Above, the first character is the space character.  In case the user enters line feeds (which are ASCII character 10) in the original plaintext message (by pressing 'Enter'), I convert line feeds to spaces (ASCII character 32) before enciphering.  The deciphered message then will have spaces in place of line feeds.
