@@ -3,21 +3,22 @@
 <title>David Grunschel's Webpage</title>
 <body>
 
-<center>
 <p><b> This webpage contains a JavaScript program (programmed by me) which enables users to encipher and decipher secret messages using a secret key. 
 The particular method used makes this cipher very similar to the Vigenère cipher.
 The cipher is most secure when the key is random and has a character length on the order of the character length of the message.  
-</b></p><p></p></center>For example, try deciphering the following ciphertext using 'Conqueror David' as the secret key:
-<p></p><center>
+</b></p>
+<p>For example, try deciphering the following ciphertext using 'Conqueror David' as the secret key:</p>
+<center>
 
 <script language="JavaScript" src="vigenere.js">
 </script>
 
 <form name="form">
 
-Key:
-<textarea rows="1" cols="50" name="ta1"></textarea><p>
+<p>Key:
+<textarea rows="1" cols="50" name="ta1"></textarea></p>
 
+<p>
 <input value="Encipher" name="encode" onclick="toCipher()" type="button">
 <input value="Decipher" name="decode" onclick="toPlain()" type="button"><br>
 
@@ -29,7 +30,7 @@ Key:
 </form>
 </center>
 
-Send me a secret message at <b>JOXSQ&UT_[YQJOYsQQW</b> (that's my email address enciphered with the secret key 'email').
+<p>Send me a secret message at <b>JOXSQ&UT_[YQJOYsQQW</b> (that's my email address enciphered with the secret key 'email').</p>
 
 </body>
 </html>
