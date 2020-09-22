@@ -6,6 +6,6 @@ The cipher is most secure when the key is random and has a character length on t
 
 All 95 printable characters in ASCII can be utilized, with character codes 32 through 126, inclusive.  These are:
 
- !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+&nbsp;!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
 
-In case the user enters line feeds (which are ASCII character 10) in the original plaintext message (by pressing 'Enter'), I convert line feeds to spaces (ASCII character 32) before enciphering.  The deciphered message then will have spaces in place of line feeds.
+Above, &nbsp; means the space character.  In case the user enters line feeds (which are ASCII character 10) in the original plaintext message (by pressing 'Enter'), I convert line feeds to spaces (ASCII character 32) before enciphering.  The deciphered message then will have spaces in place of line feeds.
